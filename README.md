@@ -16,19 +16,28 @@ This iteration contains following fields:
 ## Query Parameters
 Actions such as print and values of the fields / labels can be set via query parameters:
 
-Example
+### Example
 http://yourserver/?serial=82GBPKR8798&item=ABC3DEFGHIJ32658419&document=DOC983255HJK&identity=9879133123&quantity=3&print=false
 
-### Field / Label Values 
+#### Field / Label Values 
 
 1. serial=		sets the serial field, label and barcode
 2. item=		sets the item code
 3. document=	sets the document
 4. identity=	sets the free text field at the bottom right corner of the label
 
-### Actions
+#### Actions
 1. quantity=	sets the quantity of labels to print
 1. print=		if true is inserted, the page prints immediately a label with the default Dymo printer
+
+# Requierements 
+
+You need to install the Dymo Label Software on the client trying to render and print labels. 
+
+Windows	DYMO Connect for Desktop (tested against v1.2)
+Mac		DYMO Label (tested against v8.7.4)
+
+https://www.dymo.com/en-US/dymo-user-guides
 
 # FAQ
 
@@ -71,10 +80,11 @@ The software is provided "AS IS", without warranty of any kind, express or impli
 
 # Authors
 
-## Dymo
-The Dymo SDK is based on the work of the DYMO Team  
-[www.dymo.com](http://www.dymo.com/en-US)
+## Dymo SDK
+The Dymo SDK was developed by the DYMO Team  
+[Dymo Website](http://www.dymo.com/en-US)
 
+## Proprietary Code
 The proprietary code has been written by Zeeshan Shahid  
 [Zeeshan Shahid on Github](https://github.com/xee87)
 
