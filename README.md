@@ -4,10 +4,28 @@
 Shared under riCompor OS License, please note that you have to give approriate attribution as described below in the license terms.
 
 # Summary
-This application uses HTML / javascript to print labels via the Dymo Web SDK. This application allows to pass query parameters.
+This application uses HTML / javascript to print labels via the Dymo Web SDK. 
 
 ## Implemented Fields
-This version 
+This iteration contains following fields: 
+1. Serial Number
+
+## Query Parameters
+Actions such as print and values of the fields / labels can be set via query parameters:
+
+Example
+http://yourserver/?serial=82GBPKR8798&item=ABC3DEFGHIJ32658419&document=DOC983255HJK&identity=9879133123&quantity=3&print=false
+
+### Field / Label Values 
+
+1. serial=		sets the serial field, label and barcode
+2. item=		sets the item code
+3. document=	sets the document
+4. identity=	sets the free text field at the bottom right corner of the label
+
+### Actions
+1. quantity=	sets the quantity of labels to print
+1. print=		if true is inserted, the page prints immediately a label with the default Dymo printer
 
 # riCompro License
 
