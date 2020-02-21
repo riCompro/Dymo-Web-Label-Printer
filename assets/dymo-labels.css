@@ -1,0 +1,80 @@
+/* Style Overrides*/
+input, select {
+    width: 100%;
+    height: 25px;
+    margin: 0px;
+    border-radius: 3px;
+    border: 1px solid
+    gray;
+    padding: 5px;
+}
+
+#labelImageDiv {
+    background-color: transparent;
+    padding: 5px;
+    margin: 0px;
+    min-height: 205px;
+}
+
+#printersDiv {
+    float: none;
+    margin-right: 0px;
+    margin-top: 30px;
+}
+
+#labelImage{
+    width: 100%;
+}
+#printButton, #previewButton {
+    margin: 24px 0px;
+}
+#printButton:hover, #printButton{
+    background: none;
+    background-color: #6c757d;
+    width: auto;
+    font-size: 1.25rem;
+    font-weight: 400;
+    height: auto;
+
+}
+#printButton:focus {
+    background-image: none;
+}
+
+/* Styles Override */
+
+.input-control-group div{
+    margin:15px 0px
+}
+
+.input-control-group{
+    background-color: #9cd7c4;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.label-preview-container{
+    border-radius: 3px;
+}
+
+.heading-bg-color{
+    color:#fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.heading-bg-color,.label-preview-container{
+    background-color: #7f7f7f;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.label-preview-content {
+    background-color: #d7d7d7;
+}
+
+.bottom-left-right-radius{
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
