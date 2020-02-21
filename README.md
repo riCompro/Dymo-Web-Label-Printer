@@ -50,7 +50,7 @@ Download the Dymo Label Writer software for Mac / Windows and design the label, 
 ## How do I change the label size?
 The label size can be edited in the script.js. Search for "DieCutLabel" to find the beginning of the label and look for the first draw command xml payload. 
 
-```XML
+```JavaScript
 dymoLabelXml = '<?xml version="1.0" encoding="utf-8"?>\
                 	<DrawCommands>\
                 		<DieCutLabel Version="8.0" Units="twips" MediaType="Default">\
