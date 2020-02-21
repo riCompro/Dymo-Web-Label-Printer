@@ -167,9 +167,8 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
 
             },
 
-            labelXML: function(){
-
-                var image  = ' <ObjectInfo>\
+            imageXML: function(){
+                return ' <ObjectInfo>\
             <ImageObject>\
             <Name>GRAPHIC</Name>\
             <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
@@ -186,6 +185,11 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
             </ImageObject>\
             <Bounds X="321.5997" Y="130.4124" Width="527.3438" Height="600"/>\
             </ObjectInfo>\ ';
+            },
+
+            labelXML: function(){
+
+                var image  = self.imageXML();
 
                 var barCodeLeftText = jQuery('.documentNumberText').val().length > 0 ?  jQuery('.documentNumberText').val() : 'DOCUMENT';
                 var barCode = '<ObjectInfo>\
@@ -330,7 +334,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                     <Element>\
                     <String>' + serialText + '</String>\
                     <Attributes>\
-                    <Font AutoFit="True" Family="Helvetica" Size="24" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
+                    <Font Family="Helvetica" Size="24" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
                     <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
                     </Attributes>\
                     </Element>\
@@ -341,10 +345,10 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                     </DieCutLabel> \
                     ';
                 var textXML = '<?xml version="1.0" encoding="utf-8"?>\
-                            <DieCutLabel Version="8.0" Units="twips">\
+                            <DieCutLabel Version="8.0" Units="twips" MediaType="Default">\
 	                            <PaperOrientation>Landscape</PaperOrientation>\
-	                            <Id>Address</Id>\
-	                            <PaperName>30252 Address</PaperName>\
+	                            <Id>LargeAddress</Id>\
+	                            <PaperName>30321 Large Address</PaperName>\
 	                            <DrawCommands>\
 		                             <RoundRectangle X="0" Y="0" Width="2025" Height="5020" Rx="270" Ry="270"/>\
 	                            </DrawCommands>\
