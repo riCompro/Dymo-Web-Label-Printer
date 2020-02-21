@@ -37,7 +37,7 @@ You need to install the Dymo Label Software on the client trying to render and p
 Windows	DYMO Connect for Desktop (tested against v1.2)  
 Mac		DYMO Label (tested against v8.7.4)  
   
-https://www.dymo.com/en-US/dymo-user-guides
+[Download Dymo Software](https://www.dymo.com/en-US/dymo-user-guides)  
 
 # FAQ
 
