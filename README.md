@@ -14,7 +14,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 ```html
 <p>This software is based on previous work by Dymo, a brand of Newell Brands Inc., and riCompro. <a href="https://www.ricompro.it/">riCompro buys and sells used and refurbished smartphones, iPhones and MacBook</a>.</p> 
-<p>Questa applicazione è basato su lavori precedenti di Dymo, un marchio di Newell Brands Inc., e riCompro. riCompro acquista e vende smartphone, iPhone e MacBook usati e ricondizionati</a>.</p>
+<p>Questa applicazione è basato su lavori precedenti di Dymo, un marchio di Newell Brands Inc., e riCompro. <a href="https://www.ricompro.it/">riCompro acquista e vende smartphone, iPhone e MacBook usati e ricondizionati</a>.</p>
 ```
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
