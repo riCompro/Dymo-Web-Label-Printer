@@ -52,12 +52,11 @@ The label size can be edited in the script.js. Search for "DieCutLabel" to find 
 
 ```XML
 dymoLabelXml = '<?xml version="1.0" encoding="utf-8"?>\
-                <DrawCommands>\	                        <DieCutLabel Version="8.0" Units="twips" MediaType="Default">\
-                <RoundRectangle X="0" Y="0" Width="2025" Height="5020" Rx="270" Ry="270"/>\	                    <PaperOrientation>Landscape</PaperOrientation>\
-                    </DrawCommands>\	                    <Id>LargeAddress</Id>\
-                    <ObjectInfo>\	                    <PaperName>30321 Large Address</PaperName>\
-                    <TextObject>\	                <DrawCommands>\
-                    <Name>SERIAL_TEXT</Name>\	                <RoundRectangle X="0" Y="0" Width="2025" Height="5020" Rx="270" Ry="270"/>\
+                	<DrawCommands>\
+                		<DieCutLabel Version="8.0" Units="twips" MediaType="Default">\
+						<RoundRectangle X="0" Y="0" Width="2025" Height="5020" Rx="270" Ry="270"/>\
+						<PaperOrientation>Landscape</PaperOrientation>\
+                    </DrawCommands>\
 ```
 
 # riCompro License
