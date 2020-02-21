@@ -27,11 +27,12 @@ All product and company names are trademarks™ or registered® trademarks of th
 
 The software is provided "AS IS", without warranty of any kind, express or implied, including but not limited to the warranties of merchantibility, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise. 
 
-# Attribution
-## Authors ✒️
+# With great appreciation of previous work by
+## Dymo
 Base on work of
 DYMO Team
 [www.dymo.com](http://www.dymo.com/en-US)
 
 ## Acknowledgments 📢
 *  [Dymo Developer blog](https://developers.dymo.com/)
+*  [riCompro Srl](https://www.ricompro.it/)
