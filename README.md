@@ -72,10 +72,10 @@ The software is provided "AS IS", without warranty of any kind, express or impli
 # Authors
 
 ## Dymo
-The Dymo SDK is based on the work of the DYMO Team
+The Dymo SDK is based on the work of the DYMO Team  
 [www.dymo.com](http://www.dymo.com/en-US)
 
-The proprietary code has been written by Zeeshan Shahid
+The proprietary code has been written by Zeeshan Shahid  
 [Zeeshan Shahid on Github](https://github.com/xee87)
 
 ## Acknowledgments 📢
