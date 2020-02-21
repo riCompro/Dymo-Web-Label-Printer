@@ -34,9 +34,9 @@ http://yourserver/?serial=82GBPKR8798&item=ABC3DEFGHIJ32658419&document=DOC98325
 
 You need to install the Dymo Label Software on the client trying to render and print labels. 
 
-Windows	DYMO Connect for Desktop (tested against v1.2)
-Mac		DYMO Label (tested against v8.7.4)
-
+Windows	DYMO Connect for Desktop (tested against v1.2)  
+Mac		DYMO Label (tested against v8.7.4)  
+  
 https://www.dymo.com/en-US/dymo-user-guides
 
 # FAQ
