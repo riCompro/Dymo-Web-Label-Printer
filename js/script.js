@@ -16,6 +16,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
         printers = '',
         printersSelect = '',
         dymoEvironment = '',
+        inputQty = '',
 
         DYMO = {
 
@@ -27,6 +28,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                 inputRepairCompany = jQuery('.repairCompanyText');
                 inputDocumentNumber = jQuery('.documentNumberText');
                 inputItemCode = jQuery('.itemCodeText');
+                inputQty = jQuery('.quantity');
                 printersSelect = document.getElementById('printersSelect');
 
                 self.loadPrinters();
@@ -128,7 +130,12 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                         }
                         if(self.formValidation()) {
 
-                            label.print(printersSelect.value);
+                            if(parseInt(inputQty.val()) > 1){
+                                self.multiLabelPrint(inputQty.val());
+                            }else{
+                                label.print(printersSelect.value);
+                            }
+
                         }
                     }
                     catch(e)
@@ -136,6 +143,54 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                         alert(e.message || e);
                     }
                 });
+            },
+
+            multiLabelPrint: function(qty){
+                var labelSetBuilder = new dymo.label.framework.LabelSetBuilder();
+                var i = '';
+                var record = '';
+
+                for(i=1; i<= qty; i++){
+
+                    record = labelSetBuilder.addRecord();
+                    //self.updateLabelRecord(record);
+                    var srNmb = $('.serialNumberText').val();
+
+                    record.setText('QRCODE', srNmb);
+                    record.setText('SERIAL_TEXT', srNmb);
+
+                    var itmCode = $('.itemCodeText').val();
+                    record.setText('ITEM_CODE', $(this).val());
+
+                    var docNmb = $('.documentNumberText').val();
+                    record.setText('DOC_NAME', docNmb);
+                    record.setText('BARCODE', docNmb);
+
+                    var repairCompany = $('.repairCompanyText').val();
+                    record.setText('REPAIR_COMPANY', repairCompany);
+                }
+
+                label.print(printersSelect.value, "", labelSetBuilder);
+
+            },
+
+            updateLabelRecord: function(record){
+
+                var srNmb = $('.serialNumberText').val();
+
+                record.setObjectText('QRCODE', srNmb);
+                record.setObjectText('SERIAL_TEXT', srNmb);
+
+                var itmCode = $('.itemCodeText').val();
+                record.setObjectText('ITEM_CODE', $(this).val());
+
+                var docNmb = $('.documentNumberText').val();
+                record.setObjectText('DOC_NAME', docNmb);
+                record.setObjectText('BARCODE', docNmb);
+
+                var repairCompany = $('.repairCompanyText').val();
+                record.setObjectText('REPAIR_COMPANY', repairCompany);
+
             },
 
             formValidation: function () {
@@ -424,7 +479,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
             },
 
             captureSerialNumber: function(){
-                $('.serialNumberText').keyup(function(){
+                $('.serialNumberText').blur(function(){
                     label.setObjectText('QRCODE', $(this).val());
                     label.setObjectText('SERIAL_TEXT', $(this).val());
 
@@ -434,7 +489,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
             },
 
             captureItemCode: function(){
-                $('.itemCodeText').keyup(function(){
+                $('.itemCodeText').blur(function(){
                     label.setObjectText('ITEM_CODE', $(this).val());
                     self.updatePreview();
                 });
@@ -442,7 +497,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
 
             captureDocumentNumber: function(){
 
-                $('.documentNumberText').keyup(function(){
+                $('.documentNumberText').blur(function(){
                     label.setObjectText('DOC_NAME', $(this).val());
                     label.setObjectText('BARCODE', $(this).val());
                     self.updatePreview();
@@ -451,7 +506,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
             },
 
             captureRepairCompany: function(){
-                $('.repairCompanyText').keyup(function(){
+                $('.repairCompanyText').blur(function(){
                     label.setObjectText('REPAIR_COMPANY', $(this).val());
                     self.updatePreview();
                 });
@@ -461,12 +516,28 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
             dymoPrintCheckEnvironment: function(){
 
                 dymoEvironment = dymo.label.framework.checkEnvironment();
+                var result = "isBrowserSupported: " + dymoEvironment.isBrowserSupported + "\r\n" ;
+                result += "isFrameworkInstalled: " + dymoEvironment.isFrameworkInstalled + "\r\n";
+                result += "isFrameworkInstalled: " + dymoEvironment.isFrameworkInstalled + "\r\n";
+
                 if(dymoEvironment.errorDetails.length > 0){
-                    alert(dymoEvironment.errorDetails);
+                    result += "errorDetails: " + dymoEvironment.errorDetails ;
+
+                    alert(result);
+
                     return false;
                 }
 
-                return true;
+                alert(result);
+
+
+            },
+
+            getQueryParameters: function(field){
+                var href = url ? url : window.location.href;
+                var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+                var string = reg.exec(href);
+                return string ? string[1] : null;
             }
 
         };
