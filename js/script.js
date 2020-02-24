@@ -167,8 +167,9 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
 
             },
 
-            imageXML: function(){
-                return ' <ObjectInfo>\
+            labelXML: function(){
+
+                var image  = ' <ObjectInfo>\
             <ImageObject>\
             <Name>GRAPHIC</Name>\
             <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
@@ -183,167 +184,17 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
             <HorizontalAlignment>Center</HorizontalAlignment>\
             <VerticalAlignment>Center</VerticalAlignment>\
             </ImageObject>\
-            <Bounds X="321.5997" Y="130.4124" Width="527.3438" Height="600"/>\
+            <Bounds X="321.5997" Y="130.4124" Width="527.3438" Height="560"/>\
             </ObjectInfo>\ ';
-            },
-
-            labelXML: function(){
-
-                var image  = self.imageXML();
 
                 var barCodeLeftText = jQuery('.documentNumberText').val().length > 0 ?  jQuery('.documentNumberText').val() : 'DOCUMENT';
-                var barCode = '<ObjectInfo>\
-                    <BarcodeObject>\
-                    <Name>BARCODE</Name>\
-                    <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
-                    <BackColor Alpha="255" Red="255" Green="255" Blue="255"/>\
-                    <LinkedObjectName></LinkedObjectName>\
-                    <Rotation>Rotation0</Rotation>\
-                    <IsMirrored>False</IsMirrored>\
-                    <IsVariable>False</IsVariable>\
-                    <Text>sdfasgrrereeww</Text>\
-                    <Type>Code128Auto</Type>\
-                    <Size>Medium</Size>\
-                    <TextPosition>None</TextPosition>\
-                    <TextFont Family="Helvetica" Size="10" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
-                    <CheckSumFont Family="Helvetica" Size="10" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
-                    <TextEmbedding>None</TextEmbedding>\
-                    <ECLevel>0</ECLevel>\
-                    <HorizontalAlignment>Left</HorizontalAlignment>\
-                    <QuietZonesPadding Left="0" Right="0" Top="0" Bottom="0"/>\
-                    </BarcodeObject>\
-                    <Bounds X="321.5997" Y="1339.2" Width="8612.8" Height="400"/>\
-                    </ObjectInfo>\ ';
 
                 var itemCodeText = jQuery('.itemCodeText').val().length > 0 ? jQuery('.itemCodeText').val() : 'ITEM Code Here';
                 var serialText = jQuery('.serialNumberText').val().length > 0 ? jQuery('.serialNumberText').val() : 'Serial # Here';
                 var docText = jQuery('.documentNumberText').val().length > 0 ? jQuery('.documentNumberText').val() : 'Document Number Here';
                 var repairText = jQuery('.repairCompanyText').val().length > 0 ? jQuery('.repairCompanyText').val() : '';
 
-                var itemCode = '<ObjectInfo>\
-                    <TextObject>\
-                    <Name>ITEM_CODE</Name>\
-                    <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
-                    <BackColor Alpha="0" Red="255" Green="255" Blue="255"/>\
-                    <LinkedObjectName></LinkedObjectName>\
-                    <Rotation>Rotation0</Rotation>\
-                    <IsMirrored>False</IsMirrored>\
-                    <IsVariable>False</IsVariable>\
-                    <HorizontalAlignment>Left</HorizontalAlignment>\
-                    <VerticalAlignment>Middle</VerticalAlignment>\
-                    <TextFitMode>AlwaysFit</TextFitMode>\
-                    <UseFullFontHeight>True</UseFullFontHeight>\
-                    <Verticalized>False</Verticalized>\
-                    <StyledText>\
-                    <Element>\
-                    <String>' + itemCodeText +'</String>\
-                    <Attributes>\
-                    <Font Family="Helvetica" Size="48" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
-                    <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
-                    </Attributes>\
-                    </Element>\
-                    </StyledText>\
-                    </TextObject>\
-                    <Bounds X="321.5997" Y="796.975" Width="4612.8" Height="440.5063"/>\
-                    </ObjectInfo>\ ';
 
-                var document = '<ObjectInfo>\
-                    <TextObject>\
-                    <Name>DOC_NAME</Name>\
-                    <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
-                    <BackColor Alpha="0" Red="255" Green="255" Blue="255"/>\
-                    <LinkedObjectName></LinkedObjectName>\
-                    <Rotation>Rotation0</Rotation>\
-                    <IsMirrored>False</IsMirrored>\
-                    <IsVariable>False</IsVariable>\
-                    <HorizontalAlignment>Left</HorizontalAlignment>\
-                    <VerticalAlignment>Middle</VerticalAlignment>\
-                    <TextFitMode>AlwaysFit</TextFitMode>\
-                    <UseFullFontHeight>True</UseFullFontHeight>\
-                    <Verticalized>False</Verticalized>\
-                    <StyledText>\
-                    <Element>\
-                    <String>' + docText + '</String>\
-                    <Attributes>\
-                    <Font Family="Helvetica" Size="48" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
-                    <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
-                    </Attributes>\
-                    </Element>\
-                    </StyledText>\
-                    </TextObject>\
-                    <Bounds  X="321.5997" Y="1725" Width="2000.8" Height="300"/>\
-                    </ObjectInfo>\ ';
-
-                var identity = '<ObjectInfo>\
-                    <TextObject>\
-                    <Name>REPAIR_COMPANY</Name>\
-                    <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
-                    <BackColor Alpha="0" Red="255" Green="255" Blue="255"/>\
-                    <LinkedObjectName></LinkedObjectName>\
-                    <Rotation>Rotation0</Rotation>\
-                    <IsMirrored>False</IsMirrored>\
-                    <IsVariable>False</IsVariable>\
-                    <HorizontalAlignment>Right</HorizontalAlignment>\
-                    <VerticalAlignment>Middle</VerticalAlignment>\
-                    <TextFitMode>AlwaysFit</TextFitMode>\
-                    <UseFullFontHeight>True</UseFullFontHeight>\
-                    <Verticalized>False</Verticalized>\
-                    <StyledText>\
-                    <Element>\
-                    <String>' + repairText +'</String>\
-                    <Attributes>\
-                    <Font Family="Helvetica" Size="48" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
-                    <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
-                    </Attributes>\
-                    </Element>\
-                    </StyledText>\
-                    </TextObject>\
-                    <Bounds  X="2800" Y="1725" Width="2000.8" Height="300"/>\
-                    </ObjectInfo>\ ';
-
-                var qrCodeObject = self.QRCodeXMLData();
-
-                /*
-                * ' + self.addressObjectXMLData()  + itemCode + barCode  + document + identity + image + qrCodeObject + '
-                *
-                * */
-
-                var dymoLabelXml = '<?xml version="1.0" encoding="utf-8"?>\
-                        <DieCutLabel Version="8.0" Units="twips" MediaType="Default">\
-                    <PaperOrientation>Landscape</PaperOrientation>\
-                    <Id>LargeAddress</Id>\
-                    <PaperName>30321 Large Address</PaperName>\
-                <DrawCommands>\
-                <RoundRectangle X="0" Y="0" Width="2025" Height="5020" Rx="270" Ry="270"/>\
-                    </DrawCommands>\
-                    <ObjectInfo>\
-                    <TextObject>\
-                    <Name>SERIAL_TEXT</Name>\
-                    <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
-                    <BackColor Alpha="0" Red="255" Green="255" Blue="255"/>\
-                    <LinkedObjectName></LinkedObjectName>\
-                    <Rotation>Rotation0</Rotation>\
-                    <IsMirrored>False</IsMirrored>\
-                    <IsVariable>False</IsVariable>\
-                    <HorizontalAlignment>Left</HorizontalAlignment>\
-                    <VerticalAlignment>Middle</VerticalAlignment>\
-                    <TextFitMode>AlwaysFit</TextFitMode>\
-                    <UseFullFontHeight>True</UseFullFontHeight>\
-                    <Verticalized>False</Verticalized>\
-                    <StyledText>\
-                    <Element>\
-                    <String>' + serialText + '</String>\
-                    <Attributes>\
-                    <Font Family="Helvetica" Size="24" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
-                    <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
-                    </Attributes>\
-                    </Element>\
-                    </StyledText>\
-                    </TextObject>\
-                    <Bounds X="1624.478" Y="80.6624" Width="3206.172" Height="624.375"/>\
-                    </ObjectInfo>\
-                    </DieCutLabel> \
-                    ';
                 var textXML = '<?xml version="1.0" encoding="utf-8"?>\
                             <DieCutLabel Version="8.0" Units="twips" MediaType="Default">\
 	                            <PaperOrientation>Landscape</PaperOrientation>\
@@ -376,7 +227,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                     </Element>\
                     </StyledText>\
                     </TextObject>\
-                    <Bounds  X="2800" Y="1725" Width="2000.8" Height="300"/>\
+                    <Bounds  X="2800" Y="1625" Width="2000.8" Height="300"/>\
                     </ObjectInfo>\
                     <ObjectInfo>\
                     <TextObject>\
@@ -402,36 +253,10 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                     </Element>\
                     </StyledText>\
                     </TextObject>\
-                    <Bounds X="1624.478" Y="80.6624" Width="3206.172" Height="624.375"/>\
+                    <Bounds X="1624.478" Y="80.6624" Width="3206.172" Height="654.375"/>\
                     </ObjectInfo>\
                     ' + image +
                     '<ObjectInfo>\
-                    <TextObject>\
-                    <Name>REPAIR_COMPANY</Name>\
-                    <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
-                    <BackColor Alpha="0" Red="255" Green="255" Blue="255"/>\
-                    <LinkedObjectName></LinkedObjectName>\
-                    <Rotation>Rotation0</Rotation>\
-                    <IsMirrored>False</IsMirrored>\
-                    <IsVariable>False</IsVariable>\
-                    <HorizontalAlignment>Right</HorizontalAlignment>\
-                    <VerticalAlignment>Middle</VerticalAlignment>\
-                    <TextFitMode>AlwaysFit</TextFitMode>\
-                    <UseFullFontHeight>True</UseFullFontHeight>\
-                    <Verticalized>False</Verticalized>\
-                    <StyledText>\
-                    <Element>\
-                    <String>' + repairText + '</String>\
-                    <Attributes>\
-                    <Font Family="Helvetica" Size="48" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
-                    <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
-                    </Attributes>\
-                    </Element>\
-                    </StyledText>\
-                    </TextObject>\
-                    <Bounds  X="2800" Y="1725" Width="2000.8" Height="300"/>\
-                    </ObjectInfo>\
-                        <ObjectInfo>\
                     <TextObject>\
                     <Name>DOC_NAME</Name>\
                     <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
@@ -449,13 +274,13 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                     <Element>\
                     <String>' + docText + '</String>\
                     <Attributes>\
-                    <Font Family="Helvetica" Size="48" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
+                    <Font Family="Helvetica" Size="34" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
                     <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
                     </Attributes>\
                     </Element>\
                     </StyledText>\
                     </TextObject>\
-                    <Bounds  X="321.5997" Y="1725" Width="2000.8" Height="300"/>\
+                    <Bounds  X="321.5997" Y="1625" Width="1500.8" Height="300"/>\
                     </ObjectInfo>\
                     <ObjectInfo>\
                     <TextObject>\
@@ -475,13 +300,13 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                     <Element>\
                     <String>' + itemCodeText +'</String>\
                     <Attributes>\
-                    <Font Family="Helvetica" Size="48" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
+                    <Font Family="Helvetica" Size="44" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
                     <ForeColor Alpha="255" Red="0" Green="0" Blue="0"/>\
                     </Attributes>\
                     </Element>\
                     </StyledText>\
                     </TextObject>\
-                    <Bounds X="321.5997" Y="796.975" Width="4612.8" Height="440.5063"/>\
+                    <Bounds X="321.5997" Y="706.975" Width="4612.8" Height="440.5063"/>\
                     </ObjectInfo>\
                         <ObjectInfo>\
                     <BarcodeObject>\
@@ -503,7 +328,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                     <HorizontalAlignment>Left</HorizontalAlignment>\
                     <QuietZonesPadding Left="0" Right="0" Top="0" Bottom="0"/>\
                     </BarcodeObject>\
-                    <Bounds X="321.5997" Y="1339.2" Width="8612.8" Height="400"/>\
+                    <Bounds X="321.5997" Y="1199.2" Width="8612.8" Height="400"/>\
                     </ObjectInfo>\
                     <ObjectInfo>\
                         <BarcodeObject>\
@@ -518,18 +343,18 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                         <Type>QRCode</Type>\
                         <Size>Medium</Size>\
                         <TextPosition>None</TextPosition>\
-                        <TextFont Family="Helvetica" Size="8" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
+                        <TextFont Family="Helvetica" Size="7" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
                         <CheckSumFont Family="Helvetica" Size="10" Bold="False" Italic="False" Underline="False" Strikeout="False"/>\
                         <TextEmbedding>None</TextEmbedding>\
                         <ECLevel>0</ECLevel>\
                         <HorizontalAlignment>Center</HorizontalAlignment>\
                         <QuietZonesPadding Left="0" Right="0" Top="0" Bottom="0"/>\
                         </BarcodeObject>\
-                        <Bounds X="864.7247" Y="57.59995" Width="720.3906" Height="730"/>\
+                        <Bounds X="864.7247" Y="51.59995" Width="720.3906" Height="680"/>\
                     </ObjectInfo>\
                 </DieCutLabel>';
 
-              return  dymo.label.framework.openLabelXml(textXML);
+                return  dymo.label.framework.openLabelXml(textXML);
 
             },
 
