@@ -29,6 +29,8 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                 inputDocumentNumber = jQuery('.documentNumberText');
                 inputItemCode = jQuery('.itemCodeText');
                 inputQty = jQuery('.quantity');
+
+
                 printersSelect = document.getElementById('printersSelect');
 
                 self.loadPrinters();
@@ -44,6 +46,8 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                 self.downloadLabel();
                 self.printAction();
 
+                self.loadQueryParams();
+
                 setTimeout(function () {
                     if (jQuery('.isPrint').val().length > 0) {
 
@@ -52,11 +56,33 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                         }
 
                     }
+                    $('.itemCodeText, .serialNumberText, .documentNumberText,.repairCompanyText').trigger('blur');
                 }, 600);
 
                 jQuery('.checkEnvironment').click(function () {
                     self.dymoPrintCheckEnvironment();
                 });
+
+            },
+
+            loadQueryParams: function(){
+
+                var serialQP = self.getQueryParameters('serial');
+                if(serialQP !== null)inputSerialNumb.val(serialQP);
+
+                var itemQP = self.getQueryParameters('item');
+                if(itemQP !== null) inputItemCode.val(itemQP);
+
+                var documentQP = self.getQueryParameters('document');
+                if(documentQP !== null) inputDocumentNumber.val(documentQP);
+
+                var identityQP = self.getQueryParameters('identity');
+                if(identityQP !== null) $('.repairCompanyText').val(identityQP);
+
+                var qtyQP = self.getQueryParameters('quantity');
+                if(qtyQP !== null) $('.quantity').val(qtyQP);
+
+                $('.itemCodeText, .serialNumberText, .documentNumberText,.repairCompanyText').trigger('blur');
 
             },
 
@@ -109,6 +135,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                     if(self.formValidation()) {
 
                         if (label) {
+                            self.updatePreview();
                             self.download('dymoprint.label', label);
                         } else {
                             alert('label not generated.');
@@ -129,6 +156,8 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                             return;
                         }
                         if(self.formValidation()) {
+
+                            self.updatePreview();
 
                             if(parseInt(inputQty.val()) > 1){
                                 self.multiLabelPrint(inputQty.val());
@@ -533,7 +562,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
 
             },
 
-            getQueryParameters: function(field){
+            getQueryParameters: function(field,url){
                 var href = url ? url : window.location.href;
                 var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
                 var string = reg.exec(href);
