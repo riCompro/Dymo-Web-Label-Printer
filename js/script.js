@@ -15,10 +15,12 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
         inputSerialNumb = '',
         printers = '',
         printersSelect = '',
+        dymoEvironment = '',
 
         DYMO = {
 
             init: function(){
+
                 self = this;
 
                 inputSerialNumb = jQuery('.serialNumberText');
@@ -37,20 +39,22 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                 self.captureDocumentNumber();
                 self.captureRepairCompany();
 
-
                 self.downloadLabel();
                 self.printAction();
 
-
                 setTimeout(function () {
-                    if(jQuery('.isPrint').val().length > 0){
+                    if (jQuery('.isPrint').val().length > 0) {
 
-                        if(jQuery('.isPrint').val() == "true"){
+                        if (jQuery('.isPrint').val() == "true") {
                             $('#printButton').trigger('click');
                         }
 
                     }
                 }, 600);
+
+                jQuery('.checkEnvironment').click(function () {
+                    self.dymoPrintCheckEnvironment();
+                });
 
             },
 
@@ -452,6 +456,17 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                     self.updatePreview();
                 });
 
+            },
+
+            dymoPrintCheckEnvironment: function(){
+
+                dymoEvironment = dymo.label.framework.checkEnvironment();
+                if(dymoEvironment.errorDetails.length > 0){
+                    alert(dymoEvironment.errorDetails);
+                    return false;
+                }
+
+                return true;
             }
 
         };
