@@ -49,14 +49,23 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                 self.loadQueryParams();
 
                 setTimeout(function () {
+
+                    $('.itemCodeText, .serialNumberText, .documentNumberText,.repairCompanyText').trigger('blur');
+
                     if (jQuery('.isPrint').val().length > 0) {
 
                         if (jQuery('.isPrint').val() == "true") {
+
+                            self.updatePreview();
+
                             $('#printButton').trigger('click');
+
+                            jQuery('.isPrint').val('');
+
                         }
 
                     }
-                    $('.itemCodeText, .serialNumberText, .documentNumberText,.repairCompanyText').trigger('blur');
+
                 }, 600);
 
                 jQuery('.checkEnvironment').click(function () {
@@ -82,7 +91,12 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                 var qtyQP = self.getQueryParameters('quantity');
                 if(qtyQP !== null) $('.quantity').val(qtyQP);
 
+                var printQP = self.getQueryParameters('print');
+                if(printQP !== null) jQuery('.isPrint').val(printQP);
+
                 $('.itemCodeText, .serialNumberText, .documentNumberText,.repairCompanyText').trigger('blur');
+
+                self.updatePreview();
 
             },
 
@@ -131,6 +145,8 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
             downloadLabel: function(){
 
                 jQuery('#previewButton').click(function(){
+
+                    self.updatePreview();
 
                     if(self.formValidation()) {
 
