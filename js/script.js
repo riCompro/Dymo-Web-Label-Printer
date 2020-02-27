@@ -66,7 +66,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
 
                     }
 
-                }, 600);
+                }, 800);
 
                 jQuery('.checkEnvironment').click(function () {
                     self.dymoPrintCheckEnvironment();
@@ -94,7 +94,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                 var printQP = self.getQueryParameters('print');
                 if(printQP !== null) jQuery('.isPrint').val(printQP);
 
-                $('.itemCodeText, .serialNumberText, .documentNumberText,.repairCompanyText').trigger('blur');
+                $('.serialNumberText').trigger('blur');
 
                 self.updatePreview();
 
@@ -205,7 +205,7 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
                     record.setText('SERIAL_TEXT', srNmb);
 
                     var itmCode = $('.itemCodeText').val();
-                    record.setText('ITEM_CODE', $(this).val());
+                    record.setText('ITEM_CODE', itmCode);
 
                     var docNmb = $('.documentNumberText').val();
                     record.setText('DOC_NAME', docNmb);
@@ -272,7 +272,6 @@ if (typeof jQuery !== 'undefined')(function( window, document, $, undefined ){
             },
 
             labelXML: function(){
-
                 var image  = ' <ObjectInfo>\
             <ImageObject>\
             <Name>GRAPHIC</Name>\
