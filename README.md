@@ -41,7 +41,7 @@ You need to install the Dymo Label Software on the client trying to render and p
 
 ## What are the environmental requierements?
 Following requierements are given: 
-* Install Dymo Label
+* Install Dymo Label [Download Dymo Software](https://www.dymo.com/support?cfid=user-guide) 
 * Install a Dymo printer
 * Run the Dymo Service (we suggest setting a fixed port)
 
@@ -49,7 +49,7 @@ We have tested our demo against following configurations.
 Windows	DYMO Connect for Desktop (tested against v1.2)  
 Mac		DYMO Label (tested against v8.7.4)  
   
-[Download Dymo Software](https://www.dymo.com/en-US/dymo-user-guides)  
+ 
 
 ## Is there a demo page?
 Yes, it's using Dymo SDK 3.0 (we will update it soon). 
