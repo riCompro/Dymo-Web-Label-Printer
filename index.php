@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="assets/PreviewAndPrintLabel.css"/>
     <link rel="stylesheet" type="text/css" href="assets/dymo-labels.css"/>
 
-    <script src="js/jquery-1.4.2.min.js"></script>
-    <script src="js/DYMO.Label.Framework.3.0.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/dymo.connect.framework.js" type="text/javascript" charset="UTF-8"></script>
     <!--<script src="js/PreviewAndPrintLabel.js" type="text/javascript" charset="UTF-8"></script>-->
     <script src="js/script.js" type="text/javascript" charset="UTF-8"></script>
 </head>
@@ -107,9 +107,10 @@
                             </select>
                         </div>
                         <div id="quanityDiv">
-                            <label for="printersSelect">Quantity:</label>
+                            <label for="quantity">Quantity:</label>
                             <input type="number"
                                    value="1"
+                                   id="quantity"
                                    name="qty" class="quantity"/>
                         </div>
                     </div>
