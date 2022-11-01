@@ -9,6 +9,10 @@ input, select {
     padding: 5px;
 }
 
+#quanityDiv{
+	margin-top: 15px;
+}
+
 #labelImageDiv {
     background-color: transparent;
     padding: 5px;
