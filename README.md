@@ -98,8 +98,9 @@ The Dymo SDK was developed by the DYMO Team
 [Dymo Website](http://www.dymo.com/en-US)
 
 ## Proprietary Code
-The proprietary code has been written by Zeeshan Shahid  
-[Zeeshan Shahid on Github](https://github.com/xee87)
+The proprietary code has been written by
+* [Zeeshan Shahid on Github](https://github.com/xee87)
+* [Raj Tailor] (https://github.com/xee87)
 
 ## Acknowledgments 📢
 *  [Dymo Git Hub](https://github.com/dymosoftware)
